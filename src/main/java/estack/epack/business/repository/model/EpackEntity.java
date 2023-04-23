@@ -32,10 +32,10 @@ public class EpackEntity {
     private String description;
 
     @Column(name = "manager_id", nullable = false)
-    private int managerId;
+    private Long managerId;
 
     @Column(name = "price", nullable = false)
-    private double price;
+    private Double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
@@ -50,7 +50,7 @@ public class EpackEntity {
     private OffsetDateTime lastUpdated;
 
     @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    private Boolean isActive;
 
     @OneToMany(mappedBy="epackEntity")
     private List<Long> ordersId;

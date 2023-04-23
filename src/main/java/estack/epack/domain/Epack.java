@@ -23,9 +23,9 @@ public class Epack {
 
     private String description;
 
-    private int managerId;
+    private Long managerId;
 
-    private double price;
+    private Double price;
 
     private Long categoryId;
 
@@ -35,7 +35,7 @@ public class Epack {
     @LastModifiedDate
     private OffsetDateTime lastUpdated;
 
-    private boolean isActive;
+    private Boolean isActive;
 
     public List<Long> ordersId;
 }
