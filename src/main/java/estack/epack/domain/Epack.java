@@ -6,6 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 
 @Data
@@ -22,7 +23,7 @@ public class Epack {
 
     private String description;
 
-    private int manager_id;
+    private int managerId;
 
     private double price;
 
@@ -36,5 +37,5 @@ public class Epack {
 
     private boolean isActive;
 
-    private Long order_id;
+    public List<Long> ordersId;
 }

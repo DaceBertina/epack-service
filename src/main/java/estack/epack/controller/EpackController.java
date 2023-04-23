@@ -1,5 +1,6 @@
 package estack.epack.controller;
 
+import estack.epack.business.repository.model.EpackEntity;
 import estack.epack.business.service.EpackService;
 import estack.epack.domain.Epack;
 import io.swagger.v3.oas.annotations.Operation;
@@ -21,7 +22,7 @@ import java.util.List;
 @Log4j2
 @Tag(description = "IT course", name = "epack")
 @RestController
-@RequestMapping(value="/api/v1/epacks")
+@RequestMapping(value="/api/v1")
 @RequiredArgsConstructor
 public class EpackController {
 
@@ -32,7 +33,7 @@ public class EpackController {
     @Operation(summary = "Adds and saves the course in the database.",
                description = "If provide correct data, saves it.",
                tags = {"epack"})
-    @ApiResponses(value = { @ApiResponse(description = "successful operation", content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Epack.class)), @Content(mediaType = "application/json", schema = @Schema(implementation = Epack.class)) }) })
+    @ApiResponses(value = { @ApiResponse(description = "successful operation", content = { @Content(mediaType = "application/json", schema = @Schema(implementation = EpackEntity.class))}) })
     @PostMapping(value = "/course", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Epack> addEpack (@Valid @RequestBody Epack epack, BindingResult bindingResult) {
         log.info("Add new course by passing: {}", epack);

@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 
 @Data
@@ -31,7 +32,7 @@ public class EpackEntity {
     private String description;
 
     @Column(name = "manager_id", nullable = false)
-    private int manager_id;
+    private int managerId;
 
     @Column(name = "price", nullable = false)
     private double price;
@@ -51,6 +52,7 @@ public class EpackEntity {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
-    @Column(name = "order_id", nullable = false)
-    private Long order_id;
+    @OneToMany(mappedBy="epackEntity")
+    private List<Long> ordersId;
+
 }

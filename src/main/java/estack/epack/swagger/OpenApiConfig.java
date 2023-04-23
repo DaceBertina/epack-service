@@ -18,6 +18,7 @@ public class OpenApiConfig {
 
     @Bean
     public GroupedOpenApi publicApi() {
+        String[] packagesToScan = {"estack.epack"};
         return GroupedOpenApi.builder()
                 .group("EpackController")
                 .packagesToScan("estack.epack")
@@ -43,6 +44,6 @@ public class OpenApiConfig {
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                         .description("Spring Boot REST API.")
-                        .url("https://github.com.DaceBertina.Estack/"));
+                        .url("https://github.com.DaceBertina/epack-service/"));
     }
 }
